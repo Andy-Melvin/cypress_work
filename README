@@ -1,0 +1,2 @@
+#This is the command used to execute them in COMMAND LINE
+npx percy exec -- npx cypress run
