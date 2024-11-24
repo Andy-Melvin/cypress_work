@@ -1,5 +1,7 @@
 
-
+import LoginPage from '../support/pageObjects/loginPage';
+import 'cypress-xpath';
+console.log('cypress-xpath loaded');
 // cypress/e2e/spec.cy.js
 module.exports = (on) => {
   on('task', {
@@ -13,10 +15,12 @@ describe('Cypress Kitchen Sink Example', () => {
 
   beforeEach(() => {
     cy.visit('https://example.cypress.io');
+    cy.clearCookies();
+    cy.clearLocalStorage();
   });
 
   it('should verify the URL', () => {
-    cy.url().should('eq', 'https://example.cypress.io/');
+    cy.url().should('eq', '');
   });
 
   it('should select elements and interact with them', () => {
@@ -47,6 +51,27 @@ describe('Cypress Kitchen Sink Example', () => {
     cy.get('@submitButton').click();
   });
 
+  // cypress/e2e/example_xpath.cy.js
+
+  // describe('Using XPath with Cypress on example.cypress.io', () => {
+  //   it('should interact with the Traversal link using XPath', () => {
+  //     // Visit the base URL
+  //     cy.visit('https://example.cypress.io');
+  
+  //     // Use refined XPath to click on the "Traversal" link in the main content area
+  //     cy.xpath("//div[contains(@class, 'home-list')]//a[@href='/commands/traversal']").click();
+  
+  //     // Verify that the URL includes '/commands/traversal'
+  //     cy.url().should('include', '/commands/traversal');
+  
+  //     // Interact with elements on the Traversal page
+  //     // For example, find the '.traversal-breadcrumb' element and assert that it exists
+  //     cy.xpath("//nav[@aria-label='breadcrumb']").should('exist');
+  //   });
+  // });
+
+
+  
   it('should chain commands to perform multiple actions', () => {
     cy.contains('Actions').click({ force: true });
 
@@ -61,6 +86,15 @@ describe('Cypress Kitchen Sink Example', () => {
     cy.get('.action-email').should('have.value', 'fake@email.com');
     cy.url().should('include', '/commands/actions');
   });
+
+/////////////////////////////////////////////
+  it('successfully logs in with valid credentials,(PageObjects)',
+    () => {const username = 'my username';
+
+    // Use the LoginPage object's login method
+    LoginPage.login(username);
+});
+///////////////////////////////////////////
 
   it('should load user fixture data and fill out form', () => {
     cy.contains('Actions').click({ force: true });

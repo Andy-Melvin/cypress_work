@@ -1,2 +1,4 @@
 #This is the command used to execute them in COMMAND LINE
 npx percy exec -- npx cypress run
+
+ENVIRONMENT=production npx cypress run, change differenr productions as you want 

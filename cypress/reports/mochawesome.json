@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-11-16T22:28:52.025Z",
+    "end": "2024-11-16T22:28:52.817Z",
+    "duration": 792,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 1,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "ee84478f-085f-4741-980e-fca68d0b22b6",
+      "title": "",
+      "fullFile": "cypress/e2e/accessibilityTest.cy.js",
+      "file": "cypress/e2e/accessibilityTest.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ef63fc22-a486-45b2-aef7-5ddcb6ebbada",
+          "title": "Quick Accessibility and Element Checks",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "checks the Cypress logo link",
+              "fullTitle": "Quick Accessibility and Element Checks checks the Cypress logo link",
+              "timedOut": null,
+              "duration": 760,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Check the Cypress logo link for correct text and href attribute\ncy.get('a.navbar-brand').should('have.text', 'cypress.io') // Check for the correct link text\n.and('have.attr', 'href', '/'); // Check that the link has the correct href",
+              "err": {
+                "message": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:53850/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:53850\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Quick Accessibility and Ele...`",
+                "estack": "CypressError: `cy.visit()` failed trying to load:\n\nhttp://localhost:53850/\n\nWe attempted to make an http request to this URL but the request failed without a response.\n\nWe received this error at the network level:\n\n  > Error: connect ECONNREFUSED 127.0.0.1:53850\n\nCommon situations why this would fail:\n  - you don't have internet access\n  - you forgot to run / boot your web server\n  - your web server isn't accessible\n  - you have weird network configuration settings on your computer\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Quick Accessibility and Ele...`\n    at <unknown> (http://localhost:53920/__cypress/runner/cypress_runner.js:131450:74)\n    at visitFailedByErr (http://localhost:53920/__cypress/runner/cypress_runner.js:130849:12)\n    at <unknown> (http://localhost:53920/__cypress/runner/cypress_runner.js:131449:11)\n    at tryCatcher (http://localhost:53920/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:53920/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:53920/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:53920/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:53920/__cypress/runner/cypress_runner.js:1697:18)\n    at _drainQueueStep (http://localhost:53920/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:53920/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:53920/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:53920/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://projecta/./cypress/e2e/accessibilityTest.cy.js:3:9)\n\nFrom Node.js Internals:\n  Error: connect ECONNREFUSED 127.0.0.1:53850\n      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1495:16)",
+                "diff": null
+              },
+              "uuid": "ddbd66a4-9643-43bf-a971-c84389121c21",
+              "parentUUID": "ef63fc22-a486-45b2-aef7-5ddcb6ebbada",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "checks the navbar toggle button",
+              "fullTitle": "Quick Accessibility and Element Checks checks the navbar toggle button",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Check the navbar toggle button for its attributes\ncy.get('button.navbar-toggle.collapsed').should('have.attr', 'type', 'button') // Verify type is 'button'\n.and('have.attr', 'data-toggle', 'collapse') // Verify data-toggle attribute\n.and('have.attr', 'data-target', '#navbar'); // Verify data-target attribute\n// Verify that the button contains three icon bars\ncy.get('button.navbar-toggle.collapsed').within(() => {\n  cy.get('.icon-bar').should('have.length', 3); // Check for three icon bars\n});",
+              "err": {},
+              "uuid": "61092496-2757-4cb8-9742-bf316a8683cc",
+              "parentUUID": "ef63fc22-a486-45b2-aef7-5ddcb6ebbada",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "ddbd66a4-9643-43bf-a971-c84389121c21"
+          ],
+          "pending": [],
+          "skipped": [
+            "61092496-2757-4cb8-9742-bf316a8683cc"
+          ],
+          "duration": 760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

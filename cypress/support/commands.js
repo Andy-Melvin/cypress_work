@@ -16,15 +16,16 @@ Cypress.Commands.add('checkA11y', (selector = 'main') => {
   });
 });
 
-Cypress.Commands.add('login', (username, password) => {
-    // Navigate to the Actions page on the demo app, which contains input fields
-    cy.visit('https://example.cypress.io/commands/actions');
-    
-    // Type into the .action-email field to simulate entering a username/email
-    cy.get('.action-email').type(username);
-    cy.get('.action-email').should('have.value', username);
-    
-    // Simulate clicking a "login" button (using the available form button)
-    cy.get('.action-btn').click();
-  });
 
+
+  Cypress.Commands.add('login', (username,) => {
+      // Navigate to the Actions page on the demo app, which contains input fields
+      cy.visit('https://example.cypress.io/commands/actions');
+      
+      // Type into the .action-email field to simulate entering a username/email
+      cy.get('.action-email').type(username);
+      cy.get('.action-email').should('have.value', username);
+      
+      // Simulate clicking a "login" button (using the available form button)
+      cy.get('.action-btn').click();
+    });
